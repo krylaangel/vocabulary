@@ -100,7 +100,7 @@ export default function EditTopicPage() {
 
     if (isLoading) {
         return (
-            <main className="mx-auto flex min-h-screen w-full max-w-2xl items-center justify-center px-6 py-12">
+            <main className="container-page">
                 <p className="text-sm text-zinc-500">
                     Loading topic...
                 </p>
@@ -110,7 +110,7 @@ export default function EditTopicPage() {
 
     if (error && !title) {
         return (
-            <main className="mx-auto flex min-h-screen w-full max-w-2xl flex-col gap-4 px-6 py-12">
+            <main className="container-page">
                 <Link
                     href="/vocabulary"
                     className="text-sm text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100"
@@ -126,7 +126,7 @@ export default function EditTopicPage() {
     }
 
     return (
-        <main className="mx-auto flex min-h-screen w-full max-w-2xl flex-col gap-8 px-6 py-12">
+        <main className="container-page">
             <header className="flex flex-col gap-2">
                 <Link
                     href={`/vocabulary/${topicId}`}
