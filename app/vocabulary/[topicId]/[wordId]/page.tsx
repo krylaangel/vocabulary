@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-
+import mongoose from 'mongoose';
 import connectToDatabase from '@/lib/mongodb';
 import Topic from '@/models/Topic';
 import Word from '@/models/Word';
@@ -19,6 +19,13 @@ export default async function VocabularyWordPage({
                                                      params,
                                                  }: VocabularyWordPageProps) {
     const { topicId, wordId } = await params;
+
+    if (
+        !mongoose.isValidObjectId(topicId) ||
+        !mongoose.isValidObjectId(wordId)
+    ) {
+        notFound();
+    }
 
     await connectToDatabase();
 

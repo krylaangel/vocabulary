@@ -94,7 +94,7 @@ export default async function VocabularyTopicPage({
                     </p>
 
                     <Link
-                        href={`/vocabulary/${topic._id}/new`}
+                        href={`/vocabulary/${topic._id}/words/new`}
                         className="mt-4 inline-block text-sm font-medium underline"
                     >
                         Add the first word
